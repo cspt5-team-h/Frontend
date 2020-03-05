@@ -11,7 +11,7 @@ function  App() {
 
   return (
     <div>
-      <Route path="/" component={Game} exact />
+      <Route path="/play" component={Game} exact />
       <Route path="/login" component={Login} exact />
       <Route path="/register" component={Register} exact />
 

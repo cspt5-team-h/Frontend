@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 import "./login.css";
 
 const Login = () => {
+  const history = useHistory();
+  const [error, setError] = useState("");
   const [formState, setFormState] = useState({
     username: "",
     password: ""
@@ -16,11 +20,27 @@ const Login = () => {
 
   const onSubmit = e => {
     e.preventDefault();
+    axios
+      .post("https://lambda-mud-test.herokuapp.com/api/login/", formState)
+      .then(res => {
+        localStorage.setItem("token", res.data.key);
+        history.push("/play");
+      })
+      .catch(res =>
+        setError(
+          (res.response.data.username && res.response.data.username[0]) ||
+            (res.response.data.password1 && res.response.data.password1[0]) ||
+            (res.response.data.password2 && res.response.data.password2[0]) ||
+            (res.response.data.non_field_errors &&
+              res.response.data.non_field_errors[0])
+        )
+      );
   };
 
   return (
     <div className="auth_form--container">
       <h1 className="auth_form--heading">Log in</h1>
+      {error && <p className="auth_form--errors">{error}</p>}
       <form className="auth_form" onSubmit={onSubmit}>
         <input
           placeholder="Username"
