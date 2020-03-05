@@ -1,52 +1,21 @@
 import React from "react";
+import { Route } from "react-router-dom";
 import "./App.css";
-import Map from './components/map/Map'
+
 // Components
-import GamePad from "./components/gamePad/GamePad";
+import Login from "./components/login/Login";
+import Register from "./components/register/Register";
+import Game from "./components/game/Game";
 
-class App extends React.Component() {
-
-
-  constructor() {
-    super();
-    this.state = {
-      rooms: [],
-    
-    };
-  }
-
-  componentDidMount() {
-    this.getRooms('https://lambda-mud-test.herokuapp.com/api/adv/rooms');
-  }
-
-  getRooms = URL => {
-  
-    fetch(URL)
-      .then(res => {
-        return res.json();
-      })
-      .then(data => {
-        this.setState({ rooms: data.rooms });
-      })
-      .catch(err => {
-        throw new Error(err);
-      });
-  };
-
-
-
-
-
-
-render(){
-
+function App() {
   return (
     <div>
-      <GamePad />
-      <Map rooms={this.state.rooms}/>
+      <Route path="/" component={Game} exact />
+      <Route path="/login" component={Login} exact />
+      <Route path="/register" component={Register} exact />
     </div>
   );
-  }
 }
 
 export default App;
+
