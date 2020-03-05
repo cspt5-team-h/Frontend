@@ -10,7 +10,7 @@ import Game from "./components/game/Game";
 function App() {
   return (
     <div>
-      <Route path="/" component={Game} exact />
+      <Route path="/play" component={Game} exact />
       <Route path="/login" component={Login} exact />
       <Route path="/register" component={Register} exact />
     </div>
