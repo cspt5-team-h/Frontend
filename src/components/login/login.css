@@ -43,9 +43,16 @@
   color: white;
   font-size: 18px;
   transition: 0.1s ease-in-out;
+  text-align: center;
 }
 
 .auth_form--button:hover {
   color: #242424;
   background: #ffff00;
+}
+
+.auth_form--errors {
+  color: #ff4242;
+  text-transform: uppercase;
+  font-size: 16px;
 }
