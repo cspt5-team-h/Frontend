@@ -21,7 +21,7 @@ const Register = () => {
   const onSubmit = e => {
     e.preventDefault();
     axios
-      .post("https://lambda-mud-test.herokuapp.com/api/registration/", {
+      .post("http://csp5.herokuapp.com/api/registration/", {
         username: formState.username,
         password1: formState.password,
         password2: formState.password
