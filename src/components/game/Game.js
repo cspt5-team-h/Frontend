@@ -5,6 +5,7 @@ import GamePad from "../gamePad/GamePad";
 import Map from "../map/Map";
 import Chat from '../chat/chat'
 import "./game.css";
+import Room from '../map/Room'
 
 const Game = () => {
   const [gameState, setGameState] = useState({});
@@ -91,11 +92,16 @@ const Game = () => {
   }, [gameState]);
   console.log(gameState);
   return (
+    <div>
     <div className="Game">
 
       <GamePad gameInfo={gameState} />
       <Map mapRooms={rooms} gameInfo={gameState} style={{ backgroundColor: 'yellow'}} />
-      <Chat style={{"color": 'red'}}/>
+      <Chat gameInfo={gameState}  style={{color: 'yellow'}}/> 
+    </div>
+    <div>
+    <Room room={gameState} style={{color: 'yellow'}}/>
+    </div>
     </div>
   );
 };
