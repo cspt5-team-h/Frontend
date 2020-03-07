@@ -10,7 +10,7 @@ const GamePad = () => {
 
   // e.preventDefault()
   axios
-  .post("https://lambda-mud-test.herokuapp.com/api/adv/move", {direction: e}, {
+  .post("http://csp5.herokuapp.com/api/adv/move/", {direction: e}, {
     headers: {
       authorization: `Token ${localStorage.getItem("token")}`
     }
@@ -32,12 +32,12 @@ const GamePad = () => {
 
       <div className="gamepad-we-cardinal-container">
         <button className="control control-left"
-         onClick= {e=> onClickHandler("w")}
+         onClick= {e=> onClickHandler("e")}
         >
           <img src={triangle} alt="move west control" />
         </button>
         <button className="control control-right"
-         onClick= {e=> onClickHandler("e")}
+         onClick= {e=> onClickHandler("w")}
         >
           <img src={triangle} alt="move east control" />
         </button>

@@ -21,7 +21,7 @@ const Login = () => {
   const onSubmit = e => {
     e.preventDefault();
     axios
-      .post("https://lambda-mud-test.herokuapp.com/api/login/", formState)
+      .post("http://csp5.herokuapp.com/api/login/", formState)
       .then(res => {
         localStorage.setItem("token", res.data.key);
         history.push("/play");

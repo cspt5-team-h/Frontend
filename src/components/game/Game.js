@@ -3,6 +3,8 @@ import axios from "axios";
 // Components
 import GamePad from "../gamePad/GamePad";
 import Map from "../map/Map";
+import Chat from '../chat/chat'
+import "./game.css";
 
 const Game = () => {
   const [gameState, setGameState] = useState({});
@@ -75,7 +77,7 @@ const Game = () => {
 
   useEffect(() => {
     axios
-      .get("https://lambda-mud-test.herokuapp.com/api/adv/init/", {
+      .get("http://csp5.herokuapp.com/api/adv/init/", {
         headers: {
           authorization: `Token ${localStorage.getItem("token")}`
         }
@@ -89,10 +91,11 @@ const Game = () => {
   }, [gameState]);
   console.log(gameState);
   return (
-    <div>
+    <div className="Game">
 
       <GamePad gameInfo={gameState} />
-      <Map mapRooms={rooms} gameInfo={gameState} />
+      <Map mapRooms={rooms} gameInfo={gameState} style={{ backgroundColor: 'yellow'}} />
+      <Chat style={{"color": 'red'}}/>
     </div>
   );
 };

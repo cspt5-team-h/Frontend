@@ -1,0 +1,11 @@
+.Game{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 25px;
+    
+    
+}
+#mpeterson.node{
+    display: flex;
+    justify-content: center;
+}
