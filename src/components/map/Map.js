@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import { Graph } from "react-d3-graph";
-
+import './map.css'
 const myConfig = {
 //   nodeHighlightBehavior: true,
 //   height: 240,
@@ -45,14 +45,14 @@ const myConfig = {
   "minZoom": 0.1,
   "nodeHighlightBehavior": false,
   "panAndZoom": true,
-  "staticGraph": true,
+  "staticGraph": false,
   "staticGraphWithDragAndDrop": false,
   "width": 800,
   "d3": {
     "alphaTarget": 0.05,
     "gravity": -100,
-    "linkLength": 100,
-    "linkStrength": 1,
+    "linkLength": 800,
+    "linkStrength": 20,
     "disableLinkForce": false
   },
   "node": {
@@ -75,7 +75,7 @@ const myConfig = {
     "svg": "",
     "symbolType": "none",
     "transformOrigin" : 20 ,
-    "transform": 20
+    "transform": 40
   },
   "link": {
     "color": "#d3d3d3",
@@ -126,14 +126,19 @@ const onMouseOutLink = function(source, target) {
 
 
 const Map = ({ mapRooms, gameInfo }) => {
+    console.log(mapRooms)
   const graph = {
     nodes: [
         {id: `${gameInfo.name}`},
         {id: `${gameInfo.title}`},
+        // {id: `${mapRooms.title}`},
+        
+        
       ],
       links: [
-          {source: `${gameInfo.name}`, target: `${gameInfo.title}`},
-          
+        {source: `${gameInfo.name}`, target: `${gameInfo.title}`},
+        // {source: `${gameInfo.description}`, target: `${mapRooms.title}`},
+        
       ]
 
 

@@ -75,10 +75,10 @@ const Game = () => {
       }
     }
   ]);
-
+  // http://csp5.herokuapp.com/api/adv/init/
   useEffect(() => {
     axios
-      .get("http://csp5.herokuapp.com/api/adv/init/", {
+      .get("https://lambda-mud-test.herokuapp.com/api/adv/init", {
         headers: {
           authorization: `Token ${localStorage.getItem("token")}`
         }
@@ -96,10 +96,10 @@ const Game = () => {
     <div className="Game">
 
       <GamePad gameInfo={gameState} />
-      <Map mapRooms={rooms} gameInfo={gameState} style={{ backgroundColor: 'yellow'}} />
+      <Map mapRooms={rooms} gameInfo={gameState}  />
       <Chat gameInfo={gameState}  style={{color: 'yellow'}}/> 
     </div>
-    <div>
+    <div className='description'>
     <Room room={gameState} style={{color: 'yellow'}}/>
     </div>
     </div>
