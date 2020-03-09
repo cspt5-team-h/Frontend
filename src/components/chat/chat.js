@@ -57,8 +57,10 @@ class Chat extends React.Component {
     console.log(this.state)
     return (
       <div className="app">
+        <div className='chat'>
         <Messages messages={this.state.messages} />
         <MessageForm sendMessage={this.sendMessage} />
+        </div>
       </div>
     );
   }

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "./login.css";
-
 const Login = () => {
   const history = useHistory();
   const [error, setError] = useState("");
@@ -10,18 +9,17 @@ const Login = () => {
     username: "",
     password: ""
   });
-
   const handleChanges = e => {
     setFormState({
       ...formState,
       [e.target.name]: e.target.value
     });
   };
-
+  // http://csp5.herokuapp.com/api/login/
   const onSubmit = e => {
     e.preventDefault();
     axios
-      .post("http://csp5.herokuapp.com/api/login/", formState)
+      .post("https://lambda-mud-test.herokuapp.com/api/login/", formState)
       .then(res => {
         localStorage.setItem("token", res.data.key);
         history.push("/play");
@@ -36,7 +34,6 @@ const Login = () => {
         )
       );
   };
-
   return (
     <div className="auth_form--container">
       <h1 className="auth_form--heading">Log in</h1>
@@ -57,11 +54,9 @@ const Login = () => {
           value={formState.password}
           onChange={handleChanges}
         />
-
         <button className="auth_form--button">Log in</button>
       </form>
     </div>
   );
 };
-
 export default Login;

@@ -1,11 +1,8 @@
-.Game{
-    display: flex;
-    justify-content: space-evenly;
-    padding-top: 25px;
-    
-    
+.game-container {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
 }
-#mpeterson.node{
-    display: flex;
-    justify-content: center;
-}
+
+
+

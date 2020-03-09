@@ -1,0 +1,23 @@
+.room{
+    display: flex;
+    justify-content: center ;
+    justify-items: center;
+    font-size: 20px;
+    color:pink;
+    /* margin-top: 2%; */
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.2) ;
+    max-width: 800px;
+    margin-left: 28%;
+    margin-bottom: 5%;
+    
+}
+
+.node{
+    /* transform: matrix3d(100, 3, 4); */
+    background-color: rgba(255, 255, 255, 0.2) ;
+    /* transform-origin: 8vmin; */
+    /* transform-style: preserve-3d; */
+    margin-bottom: 5%;
+    
+}
