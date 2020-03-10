@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { Link} from "react-router-dom";
 import axios from "axios";
 import "./login.css";
 const Login = () => {
@@ -15,11 +16,12 @@ const Login = () => {
       [e.target.name]: e.target.value
     });
   };
-  // http://csp5.herokuapp.com/api/login/
+  // https://lambda-mud-test.herokuapp.com/api/login/
+  // 
   const onSubmit = e => {
     e.preventDefault();
     axios
-      .post("https://lambda-mud-test.herokuapp.com/api/login/", formState)
+      .post("http://csp5.herokuapp.com/api/login/", formState)
       .then(res => {
         localStorage.setItem("token", res.data.key);
         history.push("/play");
@@ -55,6 +57,7 @@ const Login = () => {
           onChange={handleChanges}
         />
         <button className="auth_form--button">Log in</button>
+        <button className="auth_form--button"><Link  style={{textDecoration:'none', color:'white'}} to = '/register'>Register</Link></button>
       </form>
     </div>
   );

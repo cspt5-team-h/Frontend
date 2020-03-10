@@ -3,14 +3,15 @@ import "./gamePad.css";
 import axios from "axios";
 
 import triangle from "../../assets/icons/Triangle.svg";
-// http://csp5.herokuapp.com/api/adv/move/
+//http://lambda-mud-test.herokuapp.com/api/adv/move/
+// 
 const GamePad = () => {
 
   const onClickHandler =(e) => {
 
   // e.preventDefault()
   axios
-  .post("http://lambda-mud-test.herokuapp.com/api/adv/move/", {direction: e}, {
+  .post("http://csp5.herokuapp.com/api/adv/move/", {direction: e}, {
     headers: {
       authorization: `Token ${localStorage.getItem("token")}`
     }

@@ -14,10 +14,10 @@
 }
 
 .node{
-    /* transform: matrix3d(100, 3, 4); */
+    
     background-color: rgba(255, 255, 255, 0.2) ;
     /* transform-origin: 8vmin; */
-    /* transform-style: preserve-3d; */
+    /* transform-style: preseve-3d; */
     margin-bottom: 5%;
     
 }

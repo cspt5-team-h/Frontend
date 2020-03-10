@@ -6,12 +6,12 @@ import Map from "../map/Map";
 import Chat from "../chat/chat";
 import "./game.css";
 import Room from "../map/Room";
-
+//https://lambda-mud-test.herokuapp.com/api/adv/init/
 const Game = () => {
   const [gameState, setGameState] = useState({});
   useEffect(() => {
     axios
-      .get("https://lambda-mud-test.herokuapp.com/api/adv/init", {
+      .get("http://csp5.herokuapp.com/api/adv/init/", {
         headers: {
           authorization: `Token ${localStorage.getItem("token")}`
         }
