@@ -8,7 +8,7 @@ export class Room extends Component {
         {this.props.room.title}
 
         <p>Description</p>
-        {this.props.room.description}
+        <span style={{ fontSize: "14px" }}>{this.props.room.description}</span>
       </div>
     );
   }
