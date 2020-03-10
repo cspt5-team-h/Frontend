@@ -3,23 +3,19 @@ import "./chat.css";
 import MessageForm from "./messageForm";
 import Messages from "./message";
 import { ChatManager, TokenProvider } from "@pusher/chatkit-client";
-
-const instanceLocator = "v1:us1:77ce90b4-645a-4a9e-be1f-6624fe216506";
-
+import Title from "./header";
+const instanceLocator = "v1:us1:60a15be3-c5d7-4ded-8ca8-69643b431c90";
 const testToken =
-  "https://us1.pusherplatform.io/services/chatkit_token_provider/v1/77ce90b4-645a-4a9e-be1f-6624fe216506/token";
-
+  "https://us1.pusherplatform.io/services/chatkit_token_provider/v1/60a15be3-c5d7-4ded-8ca8-69643b431c90/token";
 const userId = "steven999";
-
-const roomId = "800d045b-1b73-434b-adb3-113016ac1065";
-
+const roomId = "0b4b9d42-2002-4b3e-afb2-2c7fe70356e2";
 class Chat extends React.Component {
   constructor() {
     super();
     this.state = {
       messages: []
     };
-    this.sendMessage = this.sendMessage.bind(this)
+    this.sendMessage = this.sendMessage.bind(this);
   }
   componentDidMount() {
     const chatManager = new ChatManager({
@@ -29,7 +25,6 @@ class Chat extends React.Component {
         url: testToken
       })
     });
-
     chatManager.connect().then(currentUser => {
       this.setState({ currentUser: currentUser });
       return currentUser.subscribeToRoomMultipart({
@@ -44,7 +39,6 @@ class Chat extends React.Component {
       });
     });
   }
-  
   sendMessage(text) {
     console.log(this.state);
     this.state.currentUser.sendMessage({
@@ -52,14 +46,14 @@ class Chat extends React.Component {
       roomId: roomId
     });
   }
-
   render() {
-    console.log(this.state)
+    console.log(this.state);
     return (
       <div className="app">
-        <div className='chat'>
-        <Messages messages={this.state.messages} />
-        <MessageForm sendMessage={this.sendMessage} />
+        <div className="chat">
+          <Title />
+          <Messages messages={this.state.messages} />
+          <MessageForm sendMessage={this.sendMessage} />
         </div>
       </div>
     );
