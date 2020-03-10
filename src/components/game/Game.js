@@ -9,6 +9,7 @@ import Room from "../map/Room";
 //https://lambda-mud-test.herokuapp.com/api/adv/init/
 const Game = () => {
   const [gameState, setGameState] = useState({});
+
   useEffect(() => {
     axios
       .get("http://csp5.herokuapp.com/api/adv/init/", {
@@ -22,7 +23,7 @@ const Game = () => {
           ...res.data
         })
       );
-  }, [gameState]);
+  }, []);
 
   return (
     <div>

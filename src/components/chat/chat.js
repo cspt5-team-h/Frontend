@@ -7,7 +7,7 @@ import Title from "./header";
 const instanceLocator = "v1:us1:60a15be3-c5d7-4ded-8ca8-69643b431c90";
 const testToken =
   "https://us1.pusherplatform.io/services/chatkit_token_provider/v1/60a15be3-c5d7-4ded-8ca8-69643b431c90/token";
-const userId = "morgan1313";
+const userId = "steven999";
 const roomId = "0b4b9d42-2002-4b3e-afb2-2c7fe70356e2";
 class Chat extends React.Component {
   constructor() {
@@ -51,7 +51,11 @@ class Chat extends React.Component {
     return (
       <div className="app">
         <div className="chat">
+<<<<<<< HEAD
           <Title/>
+=======
+          <Title />
+>>>>>>> cb8ea4a6686a1996b9309904813595eff7e20731
           <Messages messages={this.state.messages} />
           <MessageForm sendMessage={this.sendMessage} />
         </div>

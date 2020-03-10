@@ -17,8 +17,6 @@ const Register = () => {
       [e.target.name]: e.target.value
     });
   };
-  //https://lambda-mud-test.herokuapp.com/api/registration/
-  // 
   const onSubmit = e => {
     e.preventDefault();
     axios
